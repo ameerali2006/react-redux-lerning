@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addProduct } from '../store/productSlice'
+import { FaMoon } from 'react-icons/fa'
 
 import './AddProduct.css'
 import { setTheme } from '../store/themeSlice'
@@ -26,7 +27,9 @@ const AddProduct = () => {
     }
   return (
     <div className={mode=='light'?"add-product-container theme-light" :"add-product-container theme-dark"}>
-      <button onClick={()=>dispatch(setTheme())}>change theme</button>
+      <button className="btn" onClick={() => dispatch(setTheme())}>
+  <FaMoon className="moon-icon" /> Change Theme
+</button>
       <h3 className="heading">Add Product</h3>
 
       <input
